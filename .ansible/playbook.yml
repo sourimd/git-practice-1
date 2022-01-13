@@ -2,7 +2,7 @@
 - hosts: localhost
   tasks:
     - name: Return motd to registered var
-      ansible.builtin.command: cat /etc/motd
+      ansible.builtin.command: cat ./file2
       register: mymotd
     
     - name: Print return information from the previous task
