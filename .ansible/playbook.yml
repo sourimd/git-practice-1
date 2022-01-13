@@ -19,4 +19,4 @@
     - name: Print current timestamp
       ansible.builtin.debug:
         msg:
-        - "{{ release_date }}"
+        - "{{ release_date.stdout }}"
