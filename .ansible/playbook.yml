@@ -1,9 +1,6 @@
 ---
 - hosts: localhost
   tasks:
-   - name: Prints two lines of messages, but only if there is an environment value set
-     debug:
-      msg:
-       - "Provisioning based on YOUR_KEY which is:"
-       - "These servers were built using the password of. Please retain this for later use."
-
+    - name: Return motd to registered var
+      ansible.builtin.command: cat /etc/motd
+      register: mymotd
