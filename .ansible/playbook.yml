@@ -4,5 +4,8 @@
     - name: Return motd to registered var
       ansible.builtin.command: cat /etc/motd
       register: mymotd
-    - debug:
-      var: mymotd
+    
+    - name: Print return information from the previous task
+      ansible.builtin.debug:
+        var: mymotd
+        verbosity: 2
