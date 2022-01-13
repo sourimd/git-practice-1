@@ -13,4 +13,7 @@
       ansible.builtin.debug:
         msg:
         - "Provisioning based on YOUR_KEY which is: {{ mymotd.stdout_lines }}"
-    
+    - name: Get pretty release date
+      command: date '+%Y-%m-%d %H:%M:%S'
+      register: release_date
+      sudo: false
