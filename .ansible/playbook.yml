@@ -7,14 +7,3 @@
        - "Provisioning based on YOUR_KEY which is:"
        - "These servers were built using the password of. Please retain this for later use."
 
-- hosts: localhost
-  tasks:
-   - name: Get release timestamp
-     command: date +%Y%m%d%H%M%S
-     register: timestamp
-     sudo: false
-
-   - name: Name release directory
-     command: echo "{{ timestamp.stdout }}"
-     register: release_path
-     sudo: false
