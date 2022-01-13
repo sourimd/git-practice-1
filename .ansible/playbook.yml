@@ -14,7 +14,7 @@
         msg:
         - "Provisioning based on YOUR_KEY which is: {{ mymotd.stdout_lines }}"
     - name: "Install nodejs"
-      apt:
+      yum:
         update_cache: yes
         name: nodejs
         state: present
