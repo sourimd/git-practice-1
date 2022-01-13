@@ -5,5 +5,4 @@
       ansible.builtin.command: cat /etc/motd
       register: mymotd
     - name: Return motd to registered var
-      ansible.builtin.command: cat /etc/motd
-      register: mymotd
+      ansible.builtin.command: echo {{ motd }}
