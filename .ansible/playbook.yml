@@ -24,6 +24,6 @@
         - "{{ release_date.stdout }}"
     - name: Create a directory if it does not exist
       ansible.builtin.file:
-        path: ~/some_directory
+        path: ~/{{ git_version.stdout }}
         state: directory
         mode: '0755'
