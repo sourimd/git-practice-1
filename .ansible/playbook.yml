@@ -4,7 +4,9 @@
     - name: Return motd to registered var
       ansible.builtin.command: cat /home/ec2-user/file2
       register: mymotd
-    
+    - name: get git version
+      shell: git rev-parse HEAD
+      register: git_version
     - name: Print return information from the previous task
       ansible.builtin.debug:
         var: mymotd
@@ -12,7 +14,7 @@
     - name: Prints two lines of messages, but only if there is an environment value set
       ansible.builtin.debug:
         msg:
-        - "Provisioning based on YOUR_KEY which is: {{ mymotd.stdout }}"
+        - "Provisioning based on YOUR_KEY which is: {{ mymotd.stdout }} {{ git_version }}"
     - name: Get pretty release date
       ansible.builtin.command: date '+%Y-%m-%d %H:%M:%S'
       register: release_date
